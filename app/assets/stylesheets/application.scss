@@ -13,3 +13,19 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'rails_bootstrap_forms';
+
+// Overrides
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+
+.form-horizontal .control-label {
+  text-align: left;
+}
+
+.rails-bootstrap-forms-date-select select {
+  margin-right: 1rem;
+}

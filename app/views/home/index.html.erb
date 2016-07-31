@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="page-header">
+    <h1 class="text-center">Formulir Pendaftaran PKKP 2016</h1>
+  </div>
+  <p class="lead">Silahkan isi formulir di bawah ini.</p>
+  <%= bootstrap_form_for(@user, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10') do |f| %>
+    <%= f.text_field :name, label: 'Nama Lengkap', placeholder: 'Nama Lengkap' %>
+    <%= f.date_select :birth, label: 'Tanggal Lahir', order: [:day, :month, :year], start_year: Date.today.year - 30, end_year: Date.today.year - 10, prompt: true %>
+    <%= f.text_field :nim, label: 'NIM', placeholder: 'Nomor Induk Mahasiswa' %>
+    <%= f.email_field :email, label: 'Alamat Email', placeholder: 'e.g. example@gmail.com' %>
+    <%= f.text_field :phone, label: 'No. Telepon', placeholder: 'e.g. 08123456789' %>
+    <div class="form-group">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-2">
+        <%= f.submit 'Daftar', class: 'btn btn-success btn-block' %>
+      </div>
+    </div>
+  <% end %>
+</div>
