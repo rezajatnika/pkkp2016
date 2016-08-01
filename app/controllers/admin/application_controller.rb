@@ -6,8 +6,15 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    # before_filter :authenticate_admin
     http_basic_authenticate_with name: 'admin', password: 'pkkp2016'
+
+    before_action :set_locale
+
+    private
+
+    def set_locale
+      I18n.locale = :en
+    end
 
     # def authenticate_admin
     #   # TODO Add authentication logic here.
