@@ -14,11 +14,22 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'rails_bootstrap_forms';
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 // Overrides
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
 @media (min-width: 1200px) {
   .container {
-    width: 960px;
+    width: 800px;
   }
 }
 

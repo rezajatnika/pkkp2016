@@ -8,6 +8,7 @@ gem 'bootstrap_form'
 gem 'bourbon', '~> 4.2.7'
 gem 'jquery-rails'
 gem 'pg', '~> 0.15'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
@@ -16,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # Test
 group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 # Development

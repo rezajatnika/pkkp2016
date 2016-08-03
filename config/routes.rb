@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Resources
-  resources :users
-  resources :majors
+  resources :users, only: [:new, :create]
 
-  get 'pendaftaran', to: 'home#result', as: 'result'
+  get 'panitia', to: 'committees#new'
+  get 'panitia/reg', to: 'committees#registered', as: 'registered'
 end

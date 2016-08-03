@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   belongs_to :major
 
   # Validations
-  validates :name, :birth, :nim, :phone, :email, presence: true
+  validates :name, :birth, :nim, :phone, :email, :address, :major_id, presence: true
 end

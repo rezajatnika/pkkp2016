@@ -1,16 +1,13 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
-
   def create
     @user = User.new(user_params)
     puts @user.errors.full_messages
+    # if verify_recaptcha(model: @user) && @user.save
     if @user.save
       session[:user_id] = @user.id
-      redirect_to result_path
+      redirect_to registered_path
     else
-      render 'home/index'
+      render 'committees/new'
     end
   end
 
@@ -21,6 +18,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :nim, :email, :phone, :birth, :major_id)
+    params.require(:user).permit(
+      :name, :nim, :email, :phone, :birth, :major_id, :address
+    )
   end
 end
