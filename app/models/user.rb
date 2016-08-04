@@ -16,14 +16,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def name
-    name
-  end
-
-  def nim
-    nim
-  end
-
   def prodi
     major.name
   end
@@ -34,10 +26,6 @@ class User < ActiveRecord::Base
 
   def alamat
     address
-  end
-
-  def email
-    email
   end
 
   def telepon
