@@ -6,41 +6,41 @@ class User < ActiveRecord::Base
   validates :name, :birth, :nim, :phone, :email, :address, :major_id, presence: true
 
   def self.to_csv
-    attributes = %w( Nama NIM Prodi TL Alamat Email Telepon )
+    attributes = %w( name nim prodi lahir alamat email telepon )
 
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |user|
-        csv << attributes.map.with_index(2) { |attr| user.send(attr) }
+        csv << attributes.map. { |attr| user.send(attr) }
       end
     end
   end
 
-  def Nama
+  def name
     name
   end
 
-  def NIM
+  def nim
     nim
   end
 
-  def Prodi
+  def prodi
     major.name
   end
 
-  def TL
+  def lahir
     birth
   end
 
-  def Alamat
+  def alamat
     address
   end
 
-  def Email
+  def email
     email
   end
 
-  def Telepon
+  def telepon
     phone
   end
 end
