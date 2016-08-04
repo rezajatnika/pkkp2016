@@ -11,7 +11,7 @@ module Admin
       @resources = User.order(:name)
       respond_to do |format|
         format.html { super }
-        format.csv  { send_data @resources.to_csv }
+        format.csv  { send_data @resources.to_csv, filename: "Panitia PKKP 2016-#{Date.today}.csv" }
       end
     end
 
