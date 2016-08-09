@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Resources
-  resources :users, only: [:new, :create]
+  # resources :users, only: [:new, :create]
 
   get 'panitia', to: 'committees#new'
-  get 'panitia/reg', to: 'committees#registered', as: 'registered'
 end
