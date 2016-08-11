@@ -3,7 +3,15 @@ class Participant < ActiveRecord::Base
   belongs_to :major
 
   # Validations
-  validates :name, :nim, :birth, :address, :email, :gender, presence: true
+  validates :name,
+    :nim,
+    :birth,
+    :address,
+    :email,
+    :gender,
+    :major_id,
+    :phone,
+    presence: true
 
   # Gender
   enum gender: { pria: 0, wanita: 1 }
