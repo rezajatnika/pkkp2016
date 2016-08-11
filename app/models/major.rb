@@ -1,6 +1,7 @@
 class Major < ActiveRecord::Base
   # Associations
   has_many :users
+  has_many :participants
 
   # Validations
   validates :name, presence: true
