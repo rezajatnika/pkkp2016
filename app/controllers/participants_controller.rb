@@ -5,7 +5,7 @@ class ParticipantsController < ApplicationController
 
   def create
     @participant = Participant.new(participant_param)
-    if @participant.save
+    if verify_recaptcha(model: @participant) && @participant.save
       session[:participant_id] = @participant.id
       redirect_to peserta_reg_path
     else
