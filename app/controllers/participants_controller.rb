@@ -29,11 +29,13 @@ class ParticipantsController < ApplicationController
       :name,
       :nim,
       :gender,
-      :major_id,
+      :departement_id,
       :birth,
       :address,
       :email,
-      :phone
+      :phone,
+      :birth_place,
+      :photo
     )
   end
 end

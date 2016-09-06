@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904065627) do
+ActiveRecord::Schema.define(version: 20160906164528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "departements", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "majors", force: :cascade do |t|
     t.string   "name"
@@ -30,14 +36,15 @@ ActiveRecord::Schema.define(version: 20160904065627) do
     t.string   "address"
     t.date     "birth"
     t.integer  "gender"
-    t.integer  "major_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "photo"
+    t.integer  "departement_id"
+    t.string   "birth_place"
   end
 
+  add_index "participants", ["departement_id"], name: "index_participants_on_departement_id", using: :btree
   add_index "participants", ["email"], name: "index_participants_on_email", using: :btree
-  add_index "participants", ["major_id"], name: "index_participants_on_major_id", using: :btree
   add_index "participants", ["nim"], name: "index_participants_on_nim", using: :btree
 
   create_table "posts", force: :cascade do |t|
@@ -62,5 +69,6 @@ ActiveRecord::Schema.define(version: 20160904065627) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["nim"], name: "index_users_on_nim", using: :btree
 
+  add_foreign_key "participants", "departements"
   add_foreign_key "users", "majors"
 end

@@ -8,16 +8,25 @@
       <%= f.radio_button :gender, 'pria', label: 'Pria', checked: true %>
       <%= f.radio_button :gender, 'wanita', label: 'Wanita' %>
     <% end %>
-    <%= f.text_field :nim, label: 'No. Pendaftaran/NIM', placeholder: 'Nomor Pendaftaran/NIM' %>
-    <%= f.select :major_id, Major.all.collect { |p| [p.name, p.id] }, label: 'Program Studi', prompt: true %>
+    <%= f.text_field :nim, label: 'No. Gugus', placeholder: 'Nomor Gugus' %>
+    <%= f.select :departement_id, Departement.all.collect { |p| [p.name, p.id] }, label: 'Jurusan', prompt: true %>
     <%= f.date_select :birth, label: 'Tanggal Lahir', order: [:day, :month, :year], start_year: Date.today.year - 30, end_year: Date.today.year - 10, prompt: true %>
-    <%= f.text_field :address, label: 'Alamat Tinggal', placeholder: 'Gg. Kelinci No. 2A' %>
+    <%= f.text_field :birth_place, label: 'Tempat Lahir', placeholder: 'e.g.Bandung' %>
+    <%= f.text_field :address, label: 'Alamat Tinggal', placeholder: 'e.g. Gg. Kelinci No. 2A' %>
     <%= f.email_field :email, label: 'Alamat Email', placeholder: 'e.g. example@gmail.com' %>
     <%= f.text_field :phone, label: 'No. Telepon', placeholder: 'e.g. 08123456789' %>
     <div class="form-group">
-      <label class="btn btn-info btn-file">
-        <%= f.file_field :photo %>
-      </label>
+      <div class="col-sm-3">
+        <label>Pas Foto</label>
+      </div>
+      <div class="col-sm-3">
+        <label class="btn btn-info btn-file btn-block" for="participant_photo">
+          Upload <input type="file" name="participant[photo]" id="participant_photo" style="display: none;" accept="image/*" onchange="$('#upload-file-info').html($(this)[0].files[0].name);">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label id="upload-file-info">Ukuran file maksimal 500KB</label>
+      </div>
     </div>
     <div class="form-group">
       <div class="col-sm-3"></div>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Admin
   namespace :admin do
     root to: 'users#index'
-    resources :users, :majors, :posts, :participants
+    resources :users, :majors, :posts, :participants, :departements
   end
 
   # Root

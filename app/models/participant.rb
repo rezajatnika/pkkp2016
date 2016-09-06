@@ -12,8 +12,10 @@ class Participant < ActiveRecord::Base
     :address,
     :email,
     :gender,
-    :major_id,
+    :departement_id,
     :phone,
+    :birth_place,
+    :photo,
     presence: true
 
   # Gender
@@ -31,6 +33,6 @@ class Participant < ActiveRecord::Base
   end
 
   def prodi
-    major.name
+    departement.name
   end
 end
