@@ -2,7 +2,7 @@
   <div class="page-header">
     <h3 class="text-center">Formulir Pendaftaran Peserta PKKP PNJ 2016</h3>
   </div>
-  <%= bootstrap_form_for(@participant, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-9', inline_errors: true) do |f| %>
+  <%= bootstrap_form_for(@participant, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-9', inline_errors: true, html: { multipart: true }) do |f| %>
     <%= f.text_field :name, label: 'Nama Lengkap', placeholder: 'Nama Lengkap' %>
     <%= f.form_group :gender, label: { text: 'Jenis Kelamin' } do %>
       <%= f.radio_button :gender, 'pria', label: 'Pria', checked: true %>
@@ -14,6 +14,11 @@
     <%= f.text_field :address, label: 'Alamat Tinggal', placeholder: 'Gg. Kelinci No. 2A' %>
     <%= f.email_field :email, label: 'Alamat Email', placeholder: 'e.g. example@gmail.com' %>
     <%= f.text_field :phone, label: 'No. Telepon', placeholder: 'e.g. 08123456789' %>
+    <div class="form-group">
+      <label class="btn btn-info btn-file">
+        <%= f.file_field :photo %>
+      </label>
+    </div>
     <div class="form-group">
       <div class="col-sm-3"></div>
       <div class="col-sm-3">

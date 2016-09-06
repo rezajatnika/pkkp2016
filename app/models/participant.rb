@@ -2,6 +2,9 @@ class Participant < ActiveRecord::Base
   # Association
   belongs_to :major
 
+  # Photo
+  mount_uploader :photo, PhotoUploader
+
   # Validations
   validates :name,
     :nim,
