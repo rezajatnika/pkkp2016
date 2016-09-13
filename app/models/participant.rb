@@ -1,6 +1,6 @@
 class Participant < ActiveRecord::Base
   # Association
-  belongs_to :major
+  belongs_to :departement
 
   # Photo
   mount_uploader :photo, PhotoUploader
@@ -22,7 +22,9 @@ class Participant < ActiveRecord::Base
   enum gender: { pria: 0, wanita: 1 }
 
   def self.to_csv
-    attributes = %w{ name nim gender prodi birth phone email address }
+    attributes = %w{
+      name gender gugus jurusan birth birth_place address email phone photo_p
+    }
 
     CSV.generate(headers: true) do |csv|
       csv << attributes
@@ -32,7 +34,15 @@ class Participant < ActiveRecord::Base
     end
   end
 
-  def prodi
+  def jurusan
     departement.name
+  end
+
+  def photo_p
+    photo.url
+  end
+
+  def gugus
+    nim
   end
 end

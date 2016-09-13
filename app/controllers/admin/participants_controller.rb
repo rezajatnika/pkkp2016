@@ -11,7 +11,8 @@ module Admin
       @resources = Participant.order(:name)
       respond_to do |format|
         format.html { super }
-        format.csv  { send_data @resources.to_csv, filename: "Peserta PKKP 2016-#{Date.today}.csv" }
+        format.csv  { send_data @resources.to_csv,
+                      filename: "Sertifikat Peserta PKKP 2016-#{Date.today}.csv" }
       end
     end
 
