@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Default gems
 gem 'rails', '4.2.5.1'
 gem 'administrate', '~> 0.2.2'
+gem 'administrate-field-image'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 gem 'bourbon', '~> 4.2.7'

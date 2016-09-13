@@ -18,6 +18,7 @@ class ParticipantDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     major: Field::BelongsTo,
+    photo: Field::Image,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -45,6 +46,7 @@ class ParticipantDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :major,
+    :photo,
   ].freeze
 
   # FORM_ATTRIBUTES
