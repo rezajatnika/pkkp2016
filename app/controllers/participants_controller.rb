@@ -28,6 +28,7 @@ class ParticipantsController < ApplicationController
     params.require(:participant).permit(
       :name,
       :nim,
+      :no_group,
       :gender,
       :departement_id,
       :birth,

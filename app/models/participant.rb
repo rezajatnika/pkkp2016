@@ -16,6 +16,7 @@ class Participant < ActiveRecord::Base
     :phone,
     :birth_place,
     :photo,
+    :no_group,
     presence: true
 
   # Gender
@@ -23,7 +24,7 @@ class Participant < ActiveRecord::Base
 
   def self.to_csv
     attributes = %w{
-      name gender gugus jurusan birth birth_place address email phone photo_p
+      name nim gender gugus jurusan birth birth_place address email phone photo_p
     }
 
     CSV.generate(headers: true) do |csv|
@@ -43,6 +44,6 @@ class Participant < ActiveRecord::Base
   end
 
   def gugus
-    nim
+    no_group
   end
 end

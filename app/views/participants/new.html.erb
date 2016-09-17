@@ -4,11 +4,12 @@
   </div>
   <%= bootstrap_form_for(@participant, layout: :horizontal, label_col: 'col-sm-3', control_col: 'col-sm-9', inline_errors: true, html: { multipart: true }) do |f| %>
     <%= f.text_field :name, label: 'Nama Lengkap', placeholder: 'Nama Lengkap' %>
+    <%= f.text_field :nim, label: 'NIM', placeholder: 'NIM' %>
     <%= f.form_group :gender, label: { text: 'Jenis Kelamin' } do %>
       <%= f.radio_button :gender, 'pria', label: 'Pria', checked: true %>
       <%= f.radio_button :gender, 'wanita', label: 'Wanita' %>
     <% end %>
-    <%= f.text_field :nim, label: 'No. Gugus', placeholder: 'Nomor Gugus' %>
+    <%= f.text_field :no_group, label: 'No. Gugus', placeholder: 'Nomor Gugus' %>
     <%= f.select :departement_id, Departement.all.collect { |p| [p.name, p.id] }, label: 'Jurusan', prompt: true %>
     <%= f.date_select :birth, label: 'Tanggal Lahir', order: [:day, :month, :year], start_year: Date.today.year - 30, end_year: Date.today.year - 10, prompt: true %>
     <%= f.text_field :birth_place, label: 'Tempat Lahir', placeholder: 'e.g.Bandung' %>
@@ -25,7 +26,7 @@
         </label>
       </div>
       <div class="col-sm-4">
-        <label id="upload-file-info">Ukuran file maksimal 500KB</label>
+        <label id="upload-file-info">Ukuran foto 4x6 maksimal 500KB</label>
       </div>
     </div>
     <div class="form-group">
