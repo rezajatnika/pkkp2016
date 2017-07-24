@@ -6,7 +6,7 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    http_basic_authenticate_with name: 'admin', password: 'pkkp2016'
+    http_basic_authenticate_with name: 'admin_pnj', password: 'pkkp2017'
 
     before_action :set_locale
 
