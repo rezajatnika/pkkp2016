@@ -17,6 +17,4 @@ Rails.application.routes.draw do
 
   get 'peserta', to: 'participants#new'
   get 'peserta/reg', to: 'participants#registered'
-
-  get 'registered'
 end
