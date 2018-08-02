@@ -16,7 +16,6 @@ class Participant < ActiveRecord::Base
     :phone,
     :birth_place,
     :photo,
-    :no_group,
     presence: true
 
   # Gender
