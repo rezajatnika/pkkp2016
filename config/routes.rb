@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   # get 'panitia', to: 'committees#new'
   # get 'panitia/reg', to: 'committees#registered', as: 'registered'
 
-  get 'peserta', to: 'participants#new'
-  get 'peserta/reg', to: 'participants#registered'
+  # get 'peserta', to: 'participants#new'
+  # get 'peserta/reg', to: 'participants#registered'
 end
