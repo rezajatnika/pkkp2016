@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :participants, only: [:new, :create]
 
-  # get 'panitia', to: 'committees#new'
-  # get 'panitia/reg', to: 'committees#registered', as: 'registered'
+  get 'panitia', to: 'committees#new'
+  get 'panitia/reg', to: 'committees#registered', as: 'registered'
 
-  # get 'peserta', to: 'participants#new'
-  # get 'peserta/reg', to: 'participants#registered'
+  get 'peserta', to: 'participants#new'
+  get 'peserta/reg', to: 'participants#registered'
 end
